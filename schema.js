@@ -7,6 +7,6 @@ const user = new mongoose.Schema({
     DOB:{type:Number,required:true}
 })
 
-const newuser = mongoose.Schema("userinput",user)
+const newuser = mongoose.model("newuser",user);
 
-module.exports=newuser
+module.exports= newuser
