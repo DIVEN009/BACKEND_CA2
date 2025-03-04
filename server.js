@@ -47,14 +47,7 @@ app.post("/signup", async (req, res) => {
     res.status(500).json({ message: "Server error", error: error.message });
   }
 });
-app.get("/", async (req, res) => {
-    try {
-      const users = await User.find({}, { Password: 0 });
-      res.status(200).json(users);
-    } catch (error) {
-      res.status(500).json({ message: "Server error", error: error.message });
-    }
-  });
+
   
 // Start Server
 const PORT = 3000;
