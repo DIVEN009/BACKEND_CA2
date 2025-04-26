@@ -5,6 +5,11 @@ const app = express();
 app.use(express.json());
 
 // Signup Route
+
+app.get('/', (req,res)=>{
+  res.send("This is my working page");
+})
+
 app.post("/signup", async (req, res) => {
   try {
     const { Name, Email, Password, DOB } = req.body;
