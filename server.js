@@ -4,17 +4,6 @@ const mongoose = require("mongoose");
 const app = express();
 app.use(express.json());
 
-
-// User Schema
-const userSchema = new mongoose.Schema({
-  Name: { type: String, required: true },
-  Email: { type: String, required: true, unique: true },
-  Password: { type: String, required: true }, 
-  DOB: { type: Number, required: true },
-});
-
-const User = mongoose.model("newuser", userSchema);
-
 // Signup Route
 app.post("/signup", async (req, res) => {
   try {
@@ -52,3 +41,4 @@ app.post("/signup", async (req, res) => {
 // Start Server
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
